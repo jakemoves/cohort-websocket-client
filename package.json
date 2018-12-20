@@ -1,0 +1,7 @@
+{
+  "name": "cohort-barebones-client",
+  "version": "0.1.0",
+  "dependencies": {
+    "ws": "^6.0.0"
+  }
+}
