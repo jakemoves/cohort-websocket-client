@@ -15,5 +15,5 @@ client.addEventListener('close', () => {
 })
 
 client.addEventListener('error', (err) => {
-  console.log(error)
+  console.log(err)
 })
