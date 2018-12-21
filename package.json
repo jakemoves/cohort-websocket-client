@@ -2,6 +2,7 @@
   "name": "cohort-barebones-client",
   "version": "0.1.0",
   "dependencies": {
-    "ws": "^6.0.0"
+    "ws": "^6.0.0",
+    "uuid": "^3.3.2",
   }
 }
