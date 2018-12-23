@@ -5,7 +5,7 @@ const client = new WebSocket('ws://localhost:3000')
 
 client.addEventListener('open', () => {
   console.log('connection open')
-  client.send(JSON.stringify({ "guid": "" + uuid()}))
+  client.send(JSON.stringify({ "guid": "" + 12345})//uuid()}))
 })
 
 client.addEventListener('message', (msg) => {
