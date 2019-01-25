@@ -1,16 +1,22 @@
 const WebSocket = require('ws')
 var argv = require('minimist')(process.argv.slice(2));
 
-// const client = new WebSocket('https://cohort.rocks/sockets') // production 
-const client = new WebSocket('http://localhost:3000/sockets') // development
-
 const args = process.argv.slice(2)
 
 const guid = argv.guid
+const eventId = argv.event
+const env = argv.env || 'dev'
+
+var client
+if(env == 'dev'){
+  client = new WebSocket('http://localhost:3000/sockets') // development
+} else if(env == 'prod'){
+  client = new WebSocket('https://cohort.rocks/sockets') // production 
+}
 
 client.addEventListener('open', () => {
   console.log('connection open')
-  client.send(JSON.stringify({ "guid": guid, "eventId": 3}))
+  client.send(JSON.stringify({ "guid": "" + guid, "eventId": eventId}))
 })
 
 client.addEventListener('message', (msg) => {
